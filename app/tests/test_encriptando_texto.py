@@ -3,8 +3,6 @@ Prueba de encriptado simetrico
 """
 
 import pytest
-from cryptography.fernet import Fernet
-
 from app.funciones.encriptado import desencriptando_texto, encriptando_texto
 
 
