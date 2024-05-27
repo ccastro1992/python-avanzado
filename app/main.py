@@ -2,17 +2,13 @@
 Metodo principal para creacion de API
 """
 
-# pylint: disable=E0611
-
-
 from fastapi import FastAPI
-
 from app.funciones.cifrado_cesar import cifrado_cesar
 
-APP = FastAPI()
+app = FastAPI()
 
 
-@APP.get("/")
+@app.get("/")
 def home():
     """_summary_
 
@@ -22,7 +18,7 @@ def home():
     return {"Hola": "Mundo 123"}
 
 
-@APP.get("/cifrado-cesar")
+@app.get("/cifrado-cesar")
 def cifrado_cesar_api(texto, clave):
     """_summary_
 
@@ -30,6 +26,6 @@ def cifrado_cesar_api(texto, clave):
         texto (_type_): _description_
         clave (_type_): _description_
     """
-    resultado = cifrado_cesar(mensaje=texto, clave=int(clave))
+    resultado = cifrado_cesar(mensaje=str(texto), clave=int(clave))
 
     return {"Resultado": resultado}
