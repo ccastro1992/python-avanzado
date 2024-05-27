@@ -5,10 +5,10 @@ Metodo principal para creacion de API
 from fastapi import FastAPI
 from app.funciones.cifrado_cesar import cifrado_cesar
 
-app = FastAPI()
+APP = FastAPI()
 
 
-@app.get("/")
+@APP.get("/")
 def home():
     """_summary_
 
@@ -18,7 +18,7 @@ def home():
     return {"Hola": "Mundo 123"}
 
 
-@app.get("/cifrado-cesar")
+@APP.get("/cifrado-cesar")
 def cifrado_cesar_api(texto, clave):
     """_summary_
 

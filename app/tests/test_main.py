@@ -2,17 +2,18 @@
 Testing API
 """
 
+# pylint: disable=E0611
 from fastapi.testclient import TestClient
 
-from ..main import app
+from ..main import APP
 
-client = TestClient(app)
+CLIENT = TestClient(APP)
 
 
 def test_url_cifrado_cesar():
     """
     _summary_
     """
-    respuesta = client.get("/cifrado-cesar?texto=mama&clave=1")
+    respuesta = CLIENT.get("/cifrado-cesar?texto=mama&clave=1")
     assert respuesta.status_code == 200
     assert respuesta.json() == {"Resultado": "NBNB"}
