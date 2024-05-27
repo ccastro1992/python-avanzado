@@ -3,7 +3,7 @@ Metodo principal para creacion de API
 """
 
 from fastapi import FastAPI
-from app.funciones.cifrado_cesar import cifrado_cesar
+from .funciones.cifrado_cesar import cifrado_cesar
 
 APP = FastAPI()
 
